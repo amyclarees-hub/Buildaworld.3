@@ -1,0 +1,12 @@
+{
+  "name": "Builder World 3D",
+  "short_name": "Builder World",
+  "description": "Walk around your town, hire construction crews and build new buildings.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#9bc9e8",
+  "theme_color": "#244d3c",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

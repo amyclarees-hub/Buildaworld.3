@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#244d3c">
+  <title>Builder World 3D</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game"></div>
+  <header class="hud">
+    <div class="brand"><span>🏗️</span><div><b>BUILDER WORLD</b><small>Build your own town</small></div></div>
+    <div class="money">💰 $<span id="cash">2500</span></div>
+  </header>
+
+  <section class="help">
+    <b>How to play</b>
+    <span class="desktop-help">WASD to walk · Mouse to look · Walk to a plot and press E to use it</span>
+    <span class="mobile-help">Use the left pad to walk · Drag the right side to look · Tap USE near a plot</span>
+  </section>
+
+  <section class="panel" id="buildPanel" hidden>
+    <button class="close" id="closePanel" aria-label="Close">×</button>
+    <h2 id="panelTitle">Build on this plot</h2>
+    <p id="panelDescription">Choose a building and hire a crew to construct it.</p>
+    <div id="buildingChoices" class="choices"></div>
+    <div class="crew-row">
+      <div><b>Construction crew</b><small>Hire workers to build your project.</small></div>
+      <button id="hireBtn">Hire crew · $300</button>
+    </div>
+    <p class="status" id="panelStatus"></p>
+  </section>
+
+  <div class="controls">
+    <div class="stick-area" id="stickArea"><div class="stick" id="stick"></div></div>
+    <div class="right-controls">
+      <button id="useBtn" class="use" disabled>USE</button>
+      <button id="lookHint" class="look-hint">DRAG TO LOOK</button>
+    </div>
+  </div>
+  <div class="toast" id="toast">Welcome! Walk around and explore your town.</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.2/three.min.js"></script>
+  <script src="game.js"></script>
+  <script>
+    if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+      addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(() => {}));
+    }
+  </script>
+</body>
+</html>
